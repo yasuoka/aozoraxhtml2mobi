@@ -24,14 +24,14 @@ def aozoraxhtml2mobi(htmlfile):
     s = s.encode('utf-8')	# convert to UTF-8
 
     dc = dict()
-    self.htmldom = xml.dom.minidom.parseString(s)
-    head = self.htmldom.getElementsByTagName("head")[0]
+    htmldom = xml.dom.minidom.parseString(s)
+    head = htmldom.getElementsByTagName("head")[0]
     for m in head.getElementsByTagName("meta"):
 	if m.hasAttribute("name") and m.hasAttribute("content") and \
 	   m.getAttribute("name").startswith("DC."):
 	    dc[m.getAttribute("name")] = m.getAttribute("content")
 
-    body = self.htmldom.getElementsByTagName("body")[0]
+    body = htmldom.getElementsByTagName("body")[0]
     body.setAttribute('style', '-webkit-writing-mode: vertical-rl;')
 
     opfdom = xml.dom.minidom.parseString(opf_string)
@@ -47,7 +47,7 @@ def aozoraxhtml2mobi(htmlfile):
     dcmetadata.appendChild(m)
 
     fout = open('content.html', 'w')
-    fout.write(self.htmldom.toxml("Shift_JIS"))
+    fout.write(htmldom.toxml("Shift_JIS"))
     fout.close()
 
     fout = open('content.opf', 'w')
@@ -58,19 +58,14 @@ def aozoraxhtml2mobi(htmlfile):
 
 opf_string = """
 <package xmlns:xx="http://saxon.sf.net/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/metadata/dublin_core" unique-identifier="BookId" version="2.0">
-
 	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
-
 		<meta name="primary-writing-mode" content="vertical-rl"/>
 		<dc-metadata xmlns:dc="http://purl.org/metadata/dublin_core" xmlns:oebpackage="http://openbook.org/namespaces/oeb-package/1.0/">
 		    <dc:Language>ja</dc:Language>
 		</dc-metadata>
 	</metadata>
-
 	<manifest>
-
 		<item id="content" href="content.html" media-type="application/xhtml+xml"/>
-	
 	</manifest>
 	<spine>
 		<itemref idref="content"/>

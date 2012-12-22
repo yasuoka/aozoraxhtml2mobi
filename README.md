@@ -25,7 +25,7 @@ aozoraxhtml2mobi
 
 2. aozoraxhtml2mobi.py をダウンロードします
 
-        % wget http://github.com/yasuoka/aozoraxhtml2mobi/aozoraxhtml2mobi.py
+        % https://github.com/yasuoka/aozoraxhtml2mobi/raw/master/aozoraxhtml2mobi.py
 3. kindlegen を配置します
 
         % ln -fs (kindlegen のディレクトリ)/kindlegen ./
@@ -51,7 +51,7 @@ aozoraxhtml2mobi
 
 青空文庫で配布されている XHTML は、そのまま kindle で表示することがで
 きます。しかし、そのままでは、横書きで、左綴じです。このスクリプトは、
-縦書き、右綴じにするために必要な最低限の変換を行います。
+縦書き、右綴じにするために必要な最小限の変換を行います。
 
 
 参考文献
