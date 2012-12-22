@@ -39,7 +39,11 @@ def aozoraxhtml2mobi(htmlfile):
     dcmetadata = opfdom.getElementsByTagName("dc-metadata")[0]
 
     m = opfdom.createElement('dc:Title')
-    m.appendChild(opfdom.createTextNode(unicode(dc['DC.Title'])))
+    if not dc.has_key('DC.Title'):
+	title = head.getElementsByTagName("title")[0].firstChild.nodeValue
+    else:
+	title = dc['DC.Title']
+    m.appendChild(opfdom.createTextNode(unicode(title)))
     dcmetadata.appendChild(m)
 
     m = opfdom.createElement('dc:Creator')
