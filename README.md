@@ -18,19 +18,22 @@ aozoraxhtml2mobi
 インストール
 ------------
 
-1. インストールするディレクトリを作成し、移動します
-   % mkdir aozoraxhtml2mobi
-   % cd aozoraxhtml2mobi
+1. インストールするディレクトリを作成し、移動します:
+
+        % mkdir aozoraxhtml2mobi
+        % cd aozoraxhtml2mobi
 
 2. aozoraxhtml2mobi.py をダウンロードします
-   % wget http://github.com/yasuoka/aozoraxhtml2mobi/aozoraxhtml2mobi.py
 
+        % wget http://github.com/yasuoka/aozoraxhtml2mobi/aozoraxhtml2mobi.py
 3. kindlegen を配置します
-   % ln -fs (kindlegen のディレクトリ)/kindlegen ./
+
+        % ln -fs (kindlegen のディレクトリ)/kindlegen ./
 
 4. 青空文庫の外字の画像を配置します
-   % wget http://www.sumomo.sakura.ne.jp/~aozora/gaiji/gaiji.zip
-   % unzip -x gaiji.zip 
+
+        % wget http://www.sumomo.sakura.ne.jp/~aozora/gaiji/gaiji.zip
+        % unzip -x gaiji.zip 
 
 
 実行方法
@@ -41,6 +44,15 @@ aozoraxhtml2mobi
 与えます。
 
 変換が成功すると、mobi 形式のファイルが outout.mobi として生成されます。
+
+
+技術的なこと
+------------
+
+青空文庫で配布されている XHTML は、そのまま kindle で表示することがで
+きます。しかし、そのままでは、横書きで、左綴じです。このスクリプトは、
+縦書き、右綴じにするために必要な最低限の変換を行います。
+
 
 参考文献
 --------
