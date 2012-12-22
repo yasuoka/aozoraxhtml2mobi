@@ -5,7 +5,7 @@ aozoraxhtml2mobi
   る python スクリプトです
 - amazon.com が無料で配布している kindlegen が必要です
 - Linux で実行することを想定しています
-- 出力サンプルは[[こちら]](http://yasuoka.net/~yasuoka/aozora.html)
+- 出力サンプルは[こちら](http://yasuoka.net/~yasuoka/aozora.html)
 
 
 インストールに必要なもの
