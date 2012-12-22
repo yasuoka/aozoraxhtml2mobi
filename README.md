@@ -44,6 +44,11 @@ aozoraxhtml2mobi
 行します。引数には、青空文庫からダウンロードした XHTML のファイル名を
 与えます。
 
+例:
+
+    % wget http://www.aozora.gr.jp/cards/000096/files/2231_22251.html
+    % python aozoraxhtml2mobi.py 2231_22251.html
+
 変換が成功すると、mobi 形式のファイルが outout.mobi として生成されます。
 
 
