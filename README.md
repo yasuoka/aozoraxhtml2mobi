@@ -3,6 +3,9 @@ aozoraxhtml2mobi
 
 - 青空文庫の XHTML 形式のファイルを Kindle で読める .mobi 形式に変換す
   る python スクリプトです
+- このスクリプトで自力で変換しなくても、amazon ストアの「本 > 無料本」
+  で Kindle 形式で入手できます。それに気づかずに作成してしまったスクリ
+  プトです :)
 - amazon.com が無料で配布している kindlegen が必要です
 - Linux で実行することを想定しています
 - 出力サンプルは[こちら](http://yasuoka.net/~yasuoka/aozora.html)
@@ -19,7 +22,7 @@ aozoraxhtml2mobi
 インストール
 ------------
 
-1. インストールするディレクトリを作成し、移動します:
+1. インストールするディレクトリを作成し、移動します
 
         % mkdir aozoraxhtml2mobi
         % cd aozoraxhtml2mobi
