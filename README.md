@@ -3,7 +3,7 @@ aozoraxhtml2mobi
 
 - 青空文庫の XHTML 形式のファイルを Kindle で読める .mobi 形式に変換す
   る python スクリプトです
-- このスクリプトで自力で変換しなくても、amazon ストアの「本 > 無料本」
+- このスクリプトで自力で変換しなくても、kindle ストアの「本 > 無料本」
   で Kindle 形式で入手できます。それに気づかずに作成してしまったスクリ
   プトです :)
 - amazon.com が無料で配布している kindlegen が必要です
