@@ -27,8 +27,8 @@ KINDLEGEN = './kindlegen'
 
 def main():
     if len(sys.argv) != 2:
-	print >> sys.stderr, 'usage: python aozoraxhtml2mobi.py htmlfile'
-	sys.exit(1)
+        print >> sys.stderr, 'usage: python aozoraxhtml2mobi.py htmlfile'
+        sys.exit(1)
     aozoraxhtml2mobi(sys.argv[1])
 
 def aozoraxhtml2mobi(htmlfile):
@@ -41,9 +41,9 @@ def aozoraxhtml2mobi(htmlfile):
     htmldom = xml.dom.minidom.parseString(s)
     head = htmldom.getElementsByTagName("head")[0]
     for m in head.getElementsByTagName("meta"):
-	if m.hasAttribute("name") and m.hasAttribute("content") and \
-	   m.getAttribute("name").startswith("DC."):
-	    dc[m.getAttribute("name")] = m.getAttribute("content")
+        if m.hasAttribute("name") and m.hasAttribute("content")
+	    and m.getAttribute("name").startswith("DC."):
+            dc[m.getAttribute("name")] = m.getAttribute("content")
 
     body = htmldom.getElementsByTagName("body")[0]
     body.setAttribute('style', '-webkit-writing-mode: vertical-rl;')
@@ -53,22 +53,22 @@ def aozoraxhtml2mobi(htmlfile):
     dcmetadata = opfdom.getElementsByTagName("dc-metadata")[0]
 
     m = opfdom.createElement('dc:Title')
-    if not dc.has_key('DC.Title'):
-	title = head.getElementsByTagName("title")[0].firstChild.nodeValue
+    if not 'DC.Title' in dc:
+        title = body.getElementsByTagName("h1")[0].firstChild.nodeValue
     else:
-	title = dc['DC.Title']
-    m.appendChild(opfdom.createTextNode(unicode(title)))
+        title = dc['DC.Title']
+    m.appendChild(opfdom.createTextNode(str(title)))
     dcmetadata.appendChild(m)
 
     m = opfdom.createElement('dc:Creator')
-    m.appendChild(opfdom.createTextNode(unicode(dc['DC.Creator'])))
+    m.appendChild(opfdom.createTextNode(str(dc['DC.Creator'])))
     dcmetadata.appendChild(m)
 
-    fout = open('content.html', 'w')
+    fout = open('content.html', 'wb')
     fout.write(htmldom.toxml("Shift_JIS"))
     fout.close()
 
-    fout = open('content.opf', 'w')
+    fout = open('content.opf', 'wb')
     fout.write(opfdom.toxml("UTF-8"))
     fout.close()
 
