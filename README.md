@@ -29,14 +29,14 @@ aozoraxhtml2mobi
 
 2. aozoraxhtml2mobi.py をダウンロードします
 
-        % https://github.com/yasuoka/aozoraxhtml2mobi/raw/master/aozoraxhtml2mobi.py
+        % curl https://github.com/yasuoka/aozoraxhtml2mobi/raw/master/aozoraxhtml2mobi.py
 3. kindlegen を配置します
 
         % ln -fs (kindlegen のディレクトリ)/kindlegen ./
 
 4. 青空文庫の外字の画像を配置します
 
-        % wget http://www.sumomo.sakura.ne.jp/~aozora/gaiji/gaiji.zip
+        % curl http://www.sumomo.sakura.ne.jp/~aozora/gaiji/gaiji.zip
         % unzip -x gaiji.zip 
 
 
@@ -49,7 +49,7 @@ aozoraxhtml2mobi
 
 例:
 
-    % wget http://www.aozora.gr.jp/cards/000096/files/2231_22251.html
+    % curl http://www.aozora.gr.jp/cards/000096/files/2231_22251.html
     % python aozoraxhtml2mobi.py 2231_22251.html
 
 変換が成功すると、mobi 形式のファイルが outout.mobi として生成されます。
