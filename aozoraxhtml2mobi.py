@@ -57,11 +57,11 @@ def aozoraxhtml2mobi(htmlfile):
         title = body.getElementsByTagName("h1")[0].firstChild.nodeValue
     else:
         title = dc['DC.Title']
-    m.appendChild(opfdom.createTextNode(str(title)))
+    m.appendChild(opfdom.createTextNode(title))
     dcmetadata.appendChild(m)
 
     m = opfdom.createElement('dc:Creator')
-    m.appendChild(opfdom.createTextNode(str(dc['DC.Creator'])))
+    m.appendChild(opfdom.createTextNode(dc['DC.Creator']))
     dcmetadata.appendChild(m)
 
     fout = open('content.html', 'wb')
