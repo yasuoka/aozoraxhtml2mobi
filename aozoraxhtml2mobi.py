@@ -41,8 +41,7 @@ def aozoraxhtml2mobi(htmlfile):
     htmldom = xml.dom.minidom.parseString(s)
     head = htmldom.getElementsByTagName("head")[0]
     for m in head.getElementsByTagName("meta"):
-        if m.hasAttribute("name") and m.hasAttribute("content")
-	    and m.getAttribute("name").startswith("DC."):
+        if m.hasAttribute("name") and m.hasAttribute("content") and m.getAttribute("name").startswith("DC."):
             dc[m.getAttribute("name")] = m.getAttribute("content")
 
     body = htmldom.getElementsByTagName("body")[0]
