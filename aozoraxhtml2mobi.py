@@ -27,7 +27,7 @@ KINDLEGEN = './kindlegen'
 
 def main():
     if len(sys.argv) != 2:
-        print >> sys.stderr, 'usage: python aozoraxhtml2mobi.py htmlfile'
+        print('usage: python aozoraxhtml2mobi.py htmlfile', file=sys.stderr)
         sys.exit(1)
     aozoraxhtml2mobi(sys.argv[1])
 
